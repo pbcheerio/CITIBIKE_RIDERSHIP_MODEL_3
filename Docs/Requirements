@@ -1,0 +1,53 @@
+Part 1: Overview
+Welcome back to Hudson Mobility Analytics. The dataset you built in Part 1 has landed, and the operations team's question is now on your desk: can we predict how many rides will happen on a given day, using nothing but the calendar and the weather forecast?
+In this Tlab you will carry your CSV through the full analysis workflow you've practiced throughout each phase: explore it, find and fix its quality problems, engineer the features a linear model needs, then build, evaluate, and interpret a Linear Regression model of daily ridership.
+A warning from your manager: this dataset looks clean. It is not. Real-world data rarely announces its problems. Part of your grade rests on whether your EDA finds them before your model does.
+
+Part 2: Environment Setup
+Open your project repository in GitHub Codespaces as usual.
+Your raw data is the file you committed in Part 1: data/citibike_weather_daily.csv. If your Part 1 export had problems, fix it first — everything here depends on it.
+You created three empty notebooks in your code/ folder back in Part 1. Now you fill them, in this order: eda.ipynb, preprocessing.ipynb, model.ipynb. Each must run top to bottom without errors.
+preprocessing.ipynb must end by saving your cleaned dataset to data/citibike_weather_daily_clean.csv. model.ipynb loads the clean file and never touches the raw one.
+
+Part 3: Data Dictionary
+Your CSV has one row per day and the following columns. The stated types are what the columns SHOULD be — one of your first jobs is verifying what pandas actually loaded.
+Column
+Should Be
+Description
+ride_date
+date
+The calendar date
+num_rides
+integer
+Total Citi Bike rides that day — your prediction target
+avg_duration_min
+float
+Mean trip length in minutes
+temp_f
+float
+Mean temperature (°F) at LaGuardia
+max_temp_f
+float
+Daily max temperature (°F)
+min_temp_f
+float
+Daily min temperature (°F)
+wind_speed_knots
+float
+Mean wind speed (knots)
+precip_in
+float
+Total precipitation (inches)
+day_of_week
+string
+Weekday name, e.g. 'Monday'
+month
+integer
+Month number, 1–12
+
+
+Part 4: Business Scenario & Rules of the Road
+The Scenario: “Here's the ask,” your manager says. “Ops wants a number every morning: how many rides should we expect today? They'll have the calendar and the weather forecast — nothing else. Build me a model that turns those into a prediction, and more importantly, be ready to tell me what it gets wrong and why.”
+Your prediction target is num_rides. Two rules are graded, so read them now:
+Rule 1 — Features must be knowable in advance. Every feature must be something ops could know from the calendar and a weather forecast before the day starts. That rules out anything derived from that day's rides (including avg_duration_min) and anything from previous days' ride counts. No “yesterday's rides” features.
+Rule 2 — Don't stack the three temperature columns. temp_f, max_temp_f, and min_temp_f move together almost perfectly. Do not put all three in your model as if they were independent. Choose one (or derive one feature from them) and explain your choice in a markdown cell. If you're curious why, try all three and watch what happens to the coefficients — then write about it.
