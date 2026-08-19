@@ -1,6 +1,7 @@
 # CITIBIKE_RIDERSHIP_MODEL_3
 TLAB #3. An SQL based project for a mock Junior Data Analyst, that leads to deeper analysis through algorithmic machine learning. What drives daily ridership for the NYC bikeshare program?  Aggregate, query and analyze raw public data. Build a model with Linear Regression to predict daily ridership.
 
+<<<<<<< HEAD
 There are multiple folders to examine. **Code** contains all exploratory analysis and models built using Python. **Data** is where the exported CSV is located. **Queries** will contain all SQL based work. For any further supporting materials, they will be located under **Docs**.
 
 
@@ -13,3 +14,10 @@ To discover what drove daily ridership for the Citibike program, I created and t
 For my final observations, I created multiple scatterplots that visualized the relationships between residuals, predicted ridership, and actual ridership. The results mirrored earlier evaluations, with most data clumps strongly fit around the line of best predictions. The most illuminating part of this whole process was being able to see the shape of how ridership data played out over time within the constraints of this model. The data points shaped into a wide fan, with more spread as ridership grew past 50,000 total rides. This was a clear example of **heteroscedasticity**, meaning: the model's errors grew larger and less predictable as ridership increased over the years. 
 
 If I were to attempt this model again, in the hopes of creating a tighter fit and higher prediction accuracy, I would try to find a solution to account for the missing days. I improved the model to include holidays, but there is room for growth to examine and include perhaps more severe inclement weather. Or perhaps including days of the week muddled the results, and finding a different way to analyze the dates could work better next time. In any case, I learned a *lot* from this experience, and look forward to deepening my knowledge and expertise with machine learning!
+=======
+There are multiple folders to examine. 
+**Code** contains all exploratory analysis and models built using Python. 
+**Data** is where the exported CSV is located. 
+**Queries** will contain all SQL based work. 
+For any further supporting materials, they will be located under **Docs**.
+>>>>>>> 1cd2e9e926d1c5129740d261e8fb7a0e509a6cc9
