@@ -1,9 +1,9 @@
 # CITIBIKE_RIDERSHIP_MODEL_3
 TLAB #3. An SQL based project for a mock Junior Data Analyst, that leads to deeper analysis through algorithmic machine learning. What drives daily ridership for the NYC bikeshare program?  Aggregate, query and analyze raw public data. Build a model with Linear Regression to predict daily ridership.
-==============================================================================
+================================================
 There are multiple folders to examine. **Code** contains all exploratory analysis and models built using Python. **Data** is where the exported CSV is located. **Queries** will contain all SQL based work. For any further supporting materials, they will be located under **Docs**.
 
-=============================================================================
+================================================
 
 Upon my *initial exploratory analysis*, there were apparent trends among the data that stuck out to me for further inspection. I compared various preliminary graphs based on the relationships between weather, weekdays, time and the number of rides between the years 2013-2018. This dataset was a fairly straight forward process to clean and process for modeling, with at first only a minor issue of needing to fix the dates into a usable format, and a single row in precipitation to account for. The more puzzling issue was 186 dates missing from the dataset: 1,796 days fit the 5 years of data, but only 1,610 dates were accounted for. This ended up becoming the biggest weakness in the model's success.
 
